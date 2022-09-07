@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+@import 'mixins';
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'PT Serif', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  padding: 70px 12px 0;
+
+
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  @include onTab {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    font-size: 36px;
+    margin: 0;
+    margin-bottom: 38px;
+
+    @include onTab {
+      margin-bottom: 0;
+    }
+  }
+
+  &-text {
+    font-family: Poppins;
+    max-width: 400px;
+
+    &__title {
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    &__text {
+      font-size: 14px;
+      font-weight: 400;
+
+      @include onSmallDesktop {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 20px;
+
+  @include onPhone {
+    justify-content: space-between;
+    row-gap: 0;
+  }
+
+}
+
+.photo {
+  width: 140px;
+  margin-bottom: 5px;
+
+  @include onBigPhone {
+    width: 240px;
+  }
+
+  &-block {
+    position: relative;
+    width: 200px;
+
+    @include onBigPhone {
+      width: 300px;
+    }
+    &--mobile-margin {
+      margin-top: 0;
+
+      @include onPhone {
+        margin-top: 60px;
+      }
+
+      @include onSmallDesktop {
+        margin-top: 0;
+      }
+    }
+
+    &--center {
+      @include onSmallDesktop {
+        margin-top: 100px;
+      }
+    }
+  }
+
+  &__position {
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    transform: rotate(90deg);
+
+    margin: 0;
+
+    font-family: 'PT Serif';
+    text-transform: uppercase;
+    font-size: 10px;
+
+    @include onBigPhone {
+      top: 42px;
+      right: -10px;
+
+      font-family: 'PT Serif';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__name {
+    margin: 0;
+
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 14px;
+
+    @include onBigPhone {
+      font-size: 18px;
+    }
+  }
+}
